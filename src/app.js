@@ -19,6 +19,10 @@ const geocode = require('./utils/geocode.js');
 //Calling the express function 
 const app = express();
 
+//PORT variable for Heroku, if the first one exist, then execute if not continue with 3000 
+
+const port = process.env.PORT || 3000
+
 //-------------------Variables for Page routes -------------------// 
 
 const publicDirectory = path.join(__dirname, '../public');
@@ -231,6 +235,7 @@ app.get('/weather', (req, res) => {
 // app.com/help
 // app.com/about 
 
-app.listen(3000, () => { //here we put listen method which involves two parameters (1st is the port and 2nd the callback )
-    console.log('Server is up and running');
+app.listen(port, () => { //here we put listen method which involves two parameters (1st is the port and 2nd the callback )
+    console.log('Server is up and running on ' + port);
 });
+
