@@ -19,7 +19,7 @@ const forecast = (lat, long, callback) => {
         } else if(noCityFound){
             callback('sorry your city was not found on our database', undefined);
         } else{
-            callback(undefined, 'It is currently ' + body.current.temperature + ' degrees out there. There is ' + body.current.precip + ' % chance of rain');
+            callback(undefined, 'It is currently ' + body.current.temperature + ' degrees out there. There is ' + body.current.precip + ' % chance of rain with a humidity of ' +  body.current.humidity + ' %');
         }
 
     })
